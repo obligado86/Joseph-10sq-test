@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenSQ Tailwind Test</title>
+</head>
+
+<body x-data="{
+  currentBg: 'bg-black'
+}">
+
+  <main x-data :class="currentBg" class="transition-colors duration-500">
+
+    <!-- Hero -->
+
+    <section class="min-h-screen hero-bg text-white flex items-center justify-center overflow-hidden relative"
+      x-intersect.half="currentBg = `bg-black`">
+      <h1 class="text-4xl font-bold">
+        10SQ Tailwind Test
+      </h1>
+    </section>
+
+    <!-- Grid -->
+
+    <section x-intersect.half="currentBg = `bg-red-500`" class="h-screen p-8 grid lg:grid-cols-2 gap-8">
+      <div class="flex justify-center items-center w-full text-white bg-white order-2 lg:order-1 hover:bg-blue-600 hover:text-black group">
+        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-red-500 group-hover:rotate-12">1</div>
+      </div>
+
+      <div class="flex justify-center items-center w-full text-white bg-white order-3 lg:order-2 hover:bg-blue-600 hover:text-black group">
+        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-red-500 group-hover:rotate-12">2</div>
+      </div>
+
+      <div class="flex justify-center items-center w-full text-white bg-white order-4 lg:order-3 hover:bg-blue-600 hover:text-black group">
+        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-red-500 group-hover:rotate-12">3</div>
+      </div>
+
+      <div class="flex justify-center items-center w-full text-white bg-white order-1 lg:order-4 hover:bg-blue-600 hover:text-black group">
+        <div class="w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-red-500 group-hover:rotate-12">4</div>
+      </div>
+
+    </section>
+
+    <!-- Image Transition -->
+
+    <section x-intersect.half="currentBg = `bg-white`" class="flex justify-center items-center min-h-full p-5">
+      <div class="box-border border-2 border-black rounded-full w-25 h-25 aspect-square overflow-hidden">
+        <img src="./static/image.jpg" class="object-fill hover:scale-150" alt="image"/>
+      </div>
+    </section>
+
+    <!-- Flex Grow + Transitions -->
+
+    <section x-intersect.half="currentBg= `bg-teal-200`" class="min-h-full min-w-full">
+      <div class="flex items-center justify-center w-100 relative">
+        <img src="./static/image.jpg" class="opacity-20 min-w-full" alt="image"/>
+        <div class="inline-flex hover:list-item group justify-center min-w-[20%] min-h-[20%] max-w-min max-h-min aspect-square border-4 border-emerald-200 rounded-full absolute overflow-hidden">
+          <div class="flex w-1/3 group-hover:h-1/3 group-hover:w-full bg-pink-300 text-white justify-center items-center">01</div>
+          <div class="flex w-1/3 group-hover:h-1/3 group-hover:w-full shadow-gray-500 shadow-xl drop-shadow-xl bg-pink-500 text-white justify-center items-center">02</div>
+          <div class="flex w-1/3 group-hover:h-1/3 group-hover:w-full bg-pink-300 text-white justify-center items-center">03</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Card -->
+
+    <section x-intersect.half="currentBg= `bg-zinc-100`" class="min-h-full container p-20 flex justify-center items-center">
+      <div class="w-80 sm:w-full h-auto p-4 border-2 border-black bg-white rounded-lg">
+        <div class="block lg:inline-flex rounded-lg">
+          <img src="./static/image.jpg" class="object-fit"/>
+          <div class="block my-auto p-10">
+            <h1 class="text-4xl font-bold mb-5">Blog Post</h1>
+            <p class="text-xl mb-5">this is a blog post example. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod</p>
+            <div class="inline-flex">
+              <p class="px-4 py-1 bg-black text-center text-white mr-4 rounded-full">tag 1</p>
+              <p class="px-4 py-1 bg-black text-center text-white mx-4 rounded-full">tag 2</p>
+              <p class="px-4 py-1 bg-black text-center text-white mx-4 rounded-full">tag 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build something cool -->
+
+
+    <section class="h-screen flex items-center justify-center font-mono" x-intersect.half="addConfetti()">
+      
+      <h2 class="text-4xl font-bold text-center mx-8">
+        Build something cool
+      </h2>
+
+    </section>
+
+
+  </main>
+
+</body>
+
+</html>
